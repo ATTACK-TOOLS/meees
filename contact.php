@@ -7,6 +7,7 @@
 		<title>Get in touch with Me, Myself and I</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="js/spin.min.js"></script>
 		
@@ -22,7 +23,7 @@
 		<?php } ?>
 				<div>
 					<label for="name">Name</label><span class="errorPopup">Please enter your name</span><input type="text" name="name" id="name" spellcheck="false" required />
-					<label for="email">Email</label><span class="errorPopup">Please enter a valid email address</span><input type="email" placeholder="" name="email" id="email" spellcheck="false" required />
+					<label for="email">Email</label><span class="errorPopup">Please enter a valid email</span><input type="email" placeholder="" name="email" id="email" spellcheck="false" required />
 				</div>
 				<div>
 					<label for="message">Message</label><span class="errorPopup">Please enter a message</span><textarea name="message" id="message" spellcheck="true" required></textarea>
