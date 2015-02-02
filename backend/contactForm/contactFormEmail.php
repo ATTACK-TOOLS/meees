@@ -49,7 +49,7 @@
 	</head>
 	<body>
 		<div class="information">
-			<p class="details">A message was submitted on the Me, Myself and I contact form on <?php echo $date; ?> at <?php echo $time; ?>.</p>
+			<p class="details">A message was submitted on the <?php echo $companyName ?> contact form on <?php echo $date; ?> at <?php echo $time; ?>.</p>
 			<div>
 				<p class="nameAndEmail">Name: <?php echo $name; ?></p>
 				<p class="nameAndEmail">Email: <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a></p>

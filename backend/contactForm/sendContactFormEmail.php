@@ -1,4 +1,5 @@
 <?php
+include('../../config.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {		//If the contact form has redirected back to this page.
 	$name = trim($_POST["name"]);
 	$email = trim($_POST["email"]);
@@ -52,18 +53,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {		//If the contact form has redirecte
 	// $mail->SMTPDebug  = 1;  // enables SMTP debug information (for testing), 1 = errors and messages, 2 = messages only
 	// var_dump($mail->SMTPDebug);
 	$mail->SMTPAuth   = true;                  // enable SMTP authentication
-	$mail->Host       = "smtp.myEmail.com"; // sets the SMTP server
-	$mail->Port       = 465;                // set the SMTP port for the GMAIL server
+	$mail->Host       = $smtpHost; // sets the SMTP server
+	$mail->Port       = $smtpPort;                // set the SMTP port for the GMAIL server
 	$mail->SMTPSecure = 'ssl';
-	$mail->Username   = "contactform@myEmail.com"; // SMTP account username
-	$mail->Password   = "mySECUREpassword"; // SMTP account password
+	$mail->Username   = $smtpUsername; // SMTP account username
+	$mail->Password   = $smtpPassword; // SMTP account password
 
 
 	//Email settings
 	$mail->AddReplyTo($email,$name); //Must be above $mail->SetFrom
-	$mail->SetFrom("contactform@myEmail.com", $name);
-	$mail->AddAddress("info@myEmail.com", "Me, Myself and I");
-	$mail->Subject = "Me, Myself and I Contact form - ".$name;
+	$mail->SetFrom($fromAddress, $name);
+	$mail->AddAddress($toAddress, $toName);
+	$mail->Subject = $companyName." Contact Form - ".$name;
 	$mail->MsgHTML($emailBody);
 
 	//Only send the email if no errors have been picked up. Return 1 if mail sent, return 0 if there is an error.
